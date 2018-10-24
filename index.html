@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Calculator</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/custom-style.css">
+</head>
+<body class="bg-light">
+    <div class="container">
+        <div class="row m-0">
+            <div class="col-lg-3 offset-lg-4 col-md-3 offset-md-4 col-sm-3 offset-sm-4 mt-5 mx-auto p-0" id="calculatorDiv" >
+                <div class="col-lg-12 col-md-12 col-sm-12 py-2" id="bgCustom">
+                    <p class="text-left"><span class="text-white mr-2" id="darkBtn" onclick="changeUI(0);">Dark</span><span class="text-muted" id="lightBtn" onclick="changeUI(1);">Light</span></p>
+                    <p class="text-white text-right" id="result">00</p>
+                    <p class="text-primary text-right" id="calValue">0</p>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 text-center bg-dark" id="btnDiv">
+                    <table class="table table-borderless m-0">
+                        <tr class="row">
+                            <td class="col"><input type="button" value="C" onclick="clearValue()" class="text-light btn rounded-0"></td>
+                            <td class="col"><input type="button" value="Del" onclick="delVal()" class="text-light btn rounded-0"></td>
+                            <td class="col"><input type="button" value="&Sqrt;" onclick="sqrRoot()"  class="text-light btn rounded-0"></td>
+                            <td class="col"><input type="button" value="&divide;" onclick="getValues('/')" class="text-light btn rounded-0"></td>
+                        </tr>
+                        <tr class="row">
+                            <td class="col"><input type="button" value="7" onclick="getValues(7)" class="text-light btn rounded-0"></td>
+                            <td class="col"><input type="button" value="8" onclick="getValues(8)" class="text-light btn rounded-0"></td>
+                            <td class="col"><input type="button" value="9" onclick="getValues(9)" class="text-light btn rounded-0"></td>
+                            <td class="col"><input type="button" value="x" onclick="getValues('*')" class="text-light btn rounded-0"></td>
+                        </tr>
+                        <tr class="row">
+                            <td class="col"><input type="button" value="4" onclick="getValues(4)" class="text-light btn rounded-0"></td>
+                            <td class="col"><input type="button" value="5" onclick="getValues(5)" class="text-light btn rounded-0"></td>
+                            <td class="col"><input type="button" value="6" onclick="getValues(6)" class="text-light btn rounded-0"></td>
+                            <td class="col"><input type="button" value="-" onclick="getValues('-')" class="text-light btn rounded-0"></td>
+                        </tr>
+                        <tr class="row">
+                            <td class="col"><input type="button" value="1" onclick="getValues(1)" class="text-light btn rounded-0"></td>
+                            <td class="col"><input type="button" value="2" onclick="getValues(2)" class="text-light btn rounded-0"></td>
+                            <td class="col"><input type="button" value="3" onclick="getValues(3)" class="text-light btn rounded-0"></td>
+                            <td class="col"><input type="button" value="+" onclick="getValues('+')" class="text-light btn rounded-0"></td>
+                        </tr>
+                        <tr class="row">
+                            <td class="col"><input type="button" value="00" onclick="getValues('00')" class="text-light btn rounded-0"></td>
+                            <td class="col"><input type="button" value="0" onclick="getValues(0)" class="text-light btn rounded-0"></td>
+                            <td class="col"><input type="button" value="." onclick="getValues('.')" class="text-light btn rounded-0"></td>
+                            <td class="col"><input type="button" value="=" onclick="calculate()" class="text-light btn rounded-0 bg-primary"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="./js/script.js"></script>
+    <!-- <script src="./bootstrap/css/bootstrap.bundle.min.js"></script> -->
+
+    
+    <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCbBRo27T-IVqFHwa9fD1Scy4g-FhiXavs",
+            authDomain: "justcalculator.firebaseapp.com",
+            databaseURL: "https://justcalculator.firebaseio.com",
+            projectId: "justcalculator",
+            storageBucket: "justcalculator.appspot.com",
+            messagingSenderId: "1078836814901"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+
+
+</body>
+</html>
